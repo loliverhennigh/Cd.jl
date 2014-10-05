@@ -18,17 +18,13 @@ function cd1(training_data, size_of_layer, batch_size, iterations, learning_rate
 	for n = 1:iterations
 		batch = extract_mini_batch(training_data, batch_size, start_of_next_batch)
 		start_of_next_batch = mod(start_of_next_batch + batch_size, size(training_data,2)-batch_size) + 1 # need the plus one because julia indexs at 1
-		cd_one_step(weight_matrix, batch, momentum_speed, learning_rate);
+		gradient = cd_gradient(batch, weight_matrix);
+		momentum_speed = .9 * momentum_speed + gradient;
+		weight_matrix += momentum_speed * learning_rate;
 	end
 	return weight_matrix
 end	
 
-function cd_one_step(weight_matrix, batch, momentum_speed, learning_rate)
-	gradient = cd_gradient(batch, weight_matrix);
-	momentum_speed = .9 * momentum_speed + gradient;
-	weight_matrix += momentum_speed * learning_rate;
-
-end
 
 function cd_gradient(batch, weight_matrix)
 	# do cd1 and return gradient for it

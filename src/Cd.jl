@@ -15,7 +15,6 @@ include("probabilities_calc.jl")
 
 export 
 	cd1,
-	cd_one_step,
 	visible_to_hidden_state,
 	hidden_to_visible_state,		
 	display_weight_matrix
