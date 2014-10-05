@@ -14,7 +14,8 @@ include("probabilities_calc.jl")
 
 
 export 
-	cd1,	
+	cd1,
+	cd_one_step,	
 	display_weight_matrix
 
 
