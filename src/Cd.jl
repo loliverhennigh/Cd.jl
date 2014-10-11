@@ -18,6 +18,8 @@ export
 	visible_to_hidden_state,
 	hidden_to_visible_state,		
 	cd_gradient,
+	goodness_gradient,
+	visible_to_hidden_probability,
 	display_weight_matrix
 
 
