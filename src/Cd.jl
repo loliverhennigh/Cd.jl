@@ -17,6 +17,7 @@ export
 	cd1,
 	visible_to_hidden_state,
 	hidden_to_visible_state,		
+	cd_gradient,
 	display_weight_matrix
 
 
